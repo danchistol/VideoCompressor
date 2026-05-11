@@ -36,7 +36,7 @@ The folder mode scans for:
 Clone the repository:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/video-compressor.git
+git clone https://github.com/danchistol/video-compressor.git
 cd video-compressor
 ```
 
