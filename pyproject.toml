@@ -1,0 +1,25 @@
+[project]
+name = "video-compressor"
+version = "1.0.0"
+description = "A Tkinter desktop app for compressing videos with FFmpeg."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [
+  { name = "Your Name" }
+]
+dependencies = [
+  "ffmpeg-downloader>=0.3.0"
+]
+
+[project.urls]
+Homepage = "https://github.com/YOUR_USERNAME/video-compressor"
+Repository = "https://github.com/YOUR_USERNAME/video-compressor"
+Issues = "https://github.com/YOUR_USERNAME/video-compressor/issues"
+
+[tool.ruff]
+line-length = 88
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]

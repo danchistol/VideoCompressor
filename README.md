@@ -1,117 +1,150 @@
-# 🎬 VideoCompressor
+# Video Compressor
 
-Simple and powerful desktop video compressor built with Python + FFmpeg.
+A simple desktop video-compression app built with Python, Tkinter, and FFmpeg.
 
-![Python](https://img.shields.io/badge/Python-3.10+-blue?style=for-the-badge&logo=python)
-![FFmpeg](https://img.shields.io/badge/FFmpeg-supported-black?style=for-the-badge&logo=ffmpeg)
-![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-success?style=for-the-badge)
+The app lets you select one video file or a folder of videos, choose compression settings, and generate compressed outputs using H.264 video and AAC audio.
 
----
+## Features
 
-# ✨ Features
+- Compress a single video file or all videos in a folder
+- GUI built with Tkinter
+- Configurable CRF quality setting
+- Configurable FFmpeg preset
+- Configurable audio bitrate
+- Optional output folder
+- Automatic FFmpeg detection from PATH or `ffmpeg-downloader`
 
-- 🎥 Compress single videos or entire folders
-- ⚡ Fast H.264 compression using FFmpeg
-- 🎚 Adjustable quality (CRF)
-- 🔊 Audio bitrate control
-- 📂 Batch processing support
-- 🖥 Clean and simple GUI
-- 🚀 FastStart optimization for web playback
-- 🌍 Cross-platform support
+## Supported input formats
 
----
+The folder mode scans for:
 
-# 🚀 Installation
+- `.mp4`
+- `.mkv`
+- `.avi`
+- `.mov`
+- `.flv`
+- `.wmv`
+- `.webm`
 
-## Clone Repository
+## Requirements
 
-git clone https://github.com/yourusername/video-compressor.git
+- Python 3.9+
+- FFmpeg installed and available in PATH, or installed through `ffmpeg-downloader`
 
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/YOUR_USERNAME/video-compressor.git
 cd video-compressor
+```
 
-## Install Dependencies
+Create and activate a virtual environment:
 
+```bash
+python -m venv .venv
+```
+
+On Windows:
+
+```bash
+.venv\Scripts\activate
+```
+
+On macOS/Linux:
+
+```bash
+source .venv/bin/activate
+```
+
+Install dependencies:
+
+```bash
 pip install -r requirements.txt
+```
 
-## Install FFmpeg
+Optional: install FFmpeg using `ffmpeg-downloader`:
 
-Windows download:
+```bash
+ffdl install
+```
 
-https://ffmpeg.org/download.html
+You can also install FFmpeg manually and add it to your system PATH.
 
-Add FFmpeg to PATH.
+## Usage
 
-Optional automatic installation:
+Run the app:
 
-pip install ffmpeg-downloader
-
----
-
-# ▶️ Run Application
-
+```bash
 python VideoCompressor.py
+```
 
----
+Then:
 
-# ⚙️ Compression Settings
+1. Choose a video file or a folder containing videos.
+2. Optionally choose an output folder.
+3. Set CRF, preset, and audio bitrate.
+4. Click **Start Compression**.
 
-| Setting | Description |
-|---|---|
-| 🎚 CRF | Video quality |
-| ⚡ Preset | Compression speed |
-| 🔊 Audio Bitrate | Audio quality |
+Compressed files are saved with the `_compressed` suffix.
 
-## Recommended CRF Values
+Example:
 
-| Quality | CRF |
-|---|---|
-| High Quality | 18-20 |
-| Balanced | 23 |
-| Smaller File Size | 26-28 |
+```text
+input.mp4 -> input_compressed.mp4
+```
 
----
+## Compression settings
 
-# 📂 Supported Formats
+### CRF
 
-- MP4
-- MKV
-- AVI
-- MOV
-- FLV
-- WMV
-- WEBM
+CRF controls video quality and output size.
 
----
+- Lower CRF = better quality, larger file
+- Higher CRF = lower quality, smaller file
+- Recommended range: `18–28`
+- Default: `23`
 
-# 🧠 Built With
+### Preset
 
-- 🐍 Python
-- 🎥 FFmpeg
-- 🖼 Tkinter
-- ⚡ libx264
+Preset controls compression speed and efficiency.
 
----
+- Faster presets finish sooner but may create larger files
+- Slower presets take longer but can create smaller files
+- Default: `medium`
 
-# 🌍 Platform Support
+### Audio bitrate
 
-| OS | Supported |
-|---|---|
-| 🪟 Windows | ✅ |
-| 🐧 Linux | ✅ |
-| 🍎 macOS | ✅ |
+Examples:
 
----
+- `96k` for smaller files
+- `128k` as a balanced default
+- `192k` for better audio quality
 
-# 📄 License
+## Notes
 
-MIT License
+- The app overwrites existing output files with the same name.
+- Folder compression only processes videos directly inside the selected folder, not nested subfolders.
+- FFmpeg output is displayed in the app log.
 
----
+## Project structure
 
-# ⭐ Support
+```text
+video-compressor/
+├── VideoCompressor.py
+├── README.md
+├── requirements.txt
+├── .gitignore
+├── LICENSE
+├── pyproject.toml
+├── CONTRIBUTING.md
+├── CHANGELOG.md
+└── .github/
+    └── workflows/
+        └── python-check.yml
+```
 
-If you like this project:
+## License
 
-- ⭐ Star the repository
-- 🍴 Fork it
-- 🚀 Share it
+This project is licensed under the MIT License.
